@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.3450" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-07-11T17:54:11" tests="0" file="cypress/integration/testBack.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test with Backend" timestamp="2020-07-11T17:54:11" tests="1" time="1.3450" failures="0">
+    <testcase name="Test with Backend GET from Marvel API comics" time="1.3450" classname="GET from Marvel API comics">
+    </testcase>
+  </testsuite>
+</testsuites>

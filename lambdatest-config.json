@@ -1,0 +1,45 @@
+{
+   "lambdatest_auth": {
+      "username": "enrique.decoss@gmail.com",
+      "access_key": "rJdr2OmT4MRQl6Gxx3G8fuhtQljuLx11NheW2WSwCWdfpSTiuX"
+   },
+   "browsers": [
+      {
+         "browser": "MicrosoftEdge",
+         "platform": "Windows 10",
+         "versions": [
+            "latest"
+         ]
+      },
+      {
+         "browser": "Chrome",
+         "platform": "Windows 10",
+         "versions": [
+            "latest"
+         ]
+      },
+      {
+         "browser": "Firefox",
+         "platform": "Windows 10",
+         "versions": [
+            "latest"
+         ]
+      }
+   ],
+   "run_settings": {
+      "cypress_config_file": "cypress.json",
+      "build_name": "build-CI-testing-cypress",
+      "parallels": 5,
+      "specs": "./cypress/integration/e2e/*.spec.js",
+      "pluginsFile": true,
+      "ignore_files": "",
+      "npm_dependencies": {
+         "cypress": "9.0.0"
+      },
+      "feature_file_suppport": true
+   },
+   "tunnel_settings": {
+      "tunnel": false,
+      "tunnelName": null
+   }
+}

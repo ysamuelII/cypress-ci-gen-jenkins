@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.5720" tests="2" failures="1" skipped="1">
+  <testsuite name="Root Suite" timestamp="2020-07-11T17:53:45" tests="0" file="cypress/integration/firstTest.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Our first Suite" timestamp="2020-07-11T17:53:45" tests="2" time="6.5720" failures="1">
+    <testcase name="Our first Suite second test" time="6.5720" classname="second test">
+      <failure message="Timed out retrying: Expected &lt;button.btn__primary--large.from__button--floating&gt; not to exist in the DOM, but it was continuously found." type="AssertionError"><![CDATA[AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.
+    at Context.eval (https://www.linkedin.com/__cypress/tests?p=cypress/integration/firstTest.spec.js:22:73)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

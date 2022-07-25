@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2020-07-23T21:52:05" tests="0" file="cypress/integration/testusingPOM.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test with Page Object Model" timestamp="2020-07-23T21:52:05" tests="1" time="0.0000" failures="1">
+    <testcase name="Test with Page Object Model Login to linkedin" time="0.0000" classname="Login to linkedin">
+      <failure message="XMLHttpRequest has an invalid context." type="InvalidStateError"><![CDATA[InvalidStateError: XMLHttpRequest has an invalid context.
+_getCDNData@https://static-exp1.licdn.com/sc/h/a8qbwp95qwmm9qc9s66hsaya5:1:8807
+collectData@https://static-exp1.licdn.com/sc/h/a8qbwp95qwmm9qc9s66hsaya5:1:8011
+_collectPlugin/<@https://static-exp1.licdn.com/sc/h/a8qbwp95qwmm9qc9s66hsaya5:1:16057
+_collectPlugin@https://static-exp1.licdn.com/sc/h/a8qbwp95qwmm9qc9s66hsaya5:1:16038
+_collectPluginData@https://static-exp1.licdn.com/sc/h/a8qbwp95qwmm9qc9s66hsaya5:1:15912
+_/this._onLoad/<@https://static-exp1.licdn.com/sc/h/a8qbwp95qwmm9qc9s66hsaya5:1:12848
+invoke@https://www.linkedin.com/__cypress/runner/cypress_runner.js:163239:23
+flushTimerQueue/<@https://www.linkedin.com/__cypress/runner/cypress_runner.js:163262:13
+arrayEach@https://www.linkedin.com/__cypress/runner/cypress_runner.js:25567:19
+forEach@https://www.linkedin.com/__cypress/runner/cypress_runner.js:34393:14
+flushTimerQueue@https://www.linkedin.com/__cypress/runner/cypress_runner.js:163248:7
+pauseTimers@https://www.linkedin.com/__cypress/runner/cypress_runner.js:163272:7
+after@https://www.linkedin.com/__cypress/runner/cypress_runner.js:157947:17
+finallyHandler@https://www.linkedin.com/__cypress/runner/cypress_runner.js:6715:23
+tryCatcher@https://www.linkedin.com/__cypress/runner/cypress_runner.js:10161:23
+../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromiseFromHandler@https://www.linkedin.com/__cypress/runner/cypress_runner.js:8096:31
+../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise@https://www.linkedin.com/__cypress/runner/cypress_runner.js:8153:18
+../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromise0@https://www.linkedin.com/__cypress/runner/cypress_runner.js:8198:10
+../../node_modules/bluebird/js/release/promise.js/</module.exports/Promise.prototype._settlePromises@https://www.linkedin.com/__cypress/runner/cypress_runner.js:8278:18
+_drainQueueStep@https://www.linkedin.com/__cypress/runner/cypress_runner.js:4868:12
+_drainQueue@https://www.linkedin.com/__cypress/runner/cypress_runner.js:4861:24
+../../node_modules/bluebird/js/release/async.js/</Async.prototype._drainQueues@https://www.linkedin.com/__cypress/runner/cypress_runner.js:4877:16
+Async/this.drainQueues@https://www.linkedin.com/__cypress/runner/cypress_runner.js:4747:14
+]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

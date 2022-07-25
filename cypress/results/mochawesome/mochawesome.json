@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 1,
+    "failures": 1,
+    "start": "2020-07-11T17:53:45.227Z",
+    "end": "2020-07-11T17:54:05.734Z",
+    "duration": 20507,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 50,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f3783dd6-07f0-4e54-af20-51b04ebc6177",
+      "title": "",
+      "fullFile": "cypress/integration/firstTest.spec.js",
+      "file": "cypress/integration/firstTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfbc158b-1a43-46bb-bee1-9d2a82eb37b9",
+          "title": "Our first Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "first test",
+              "fullTitle": "Our first Suite first test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "ea6e4995-783a-4617-be55-adaaabaa5428",
+              "parentUUID": "bfbc158b-1a43-46bb-bee1-9d2a82eb37b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "second test",
+              "fullTitle": "Our first Suite second test",
+              "timedOut": null,
+              "duration": 7104,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/'); //cy.get('.nav > .nav__button-secondary')\ncy.contains('Sign in').should('exist').click();\nvar user = process.env.username;\ncy.get('#username').type(\"test\");\ncy.get('#password').type(\"test\");\ncy.get('.btn__primary--large').should('contain', 'Sign in').click().should('not.exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.\n    at Context.eval (https://www.linkedin.com/__cypress/tests?p=cypress/integration/firstTest.spec.js:22:73)",
+                "diff": null
+              },
+              "uuid": "c604d6b7-1f74-48fc-b37c-37addd85f9ff",
+              "parentUUID": "bfbc158b-1a43-46bb-bee1-9d2a82eb37b9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c604d6b7-1f74-48fc-b37c-37addd85f9ff"
+          ],
+          "pending": [
+            "ea6e4995-783a-4617-be55-adaaabaa5428"
+          ],
+          "skipped": [],
+          "duration": 7104,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

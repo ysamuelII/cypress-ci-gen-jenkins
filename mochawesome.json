@@ -1,0 +1,560 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 10,
+    "passes": 6,
+    "pending": 2,
+    "failures": 2,
+    "start": "2020-07-11T18:07:31.461Z",
+    "end": "2020-07-11T18:07:31.461Z",
+    "duration": 34779,
+    "testsRegistered": 10,
+    "passPercent": 60,
+    "pendingPercent": 20,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f5eecb13-c5d9-4371-84eb-72e8bf997380",
+      "title": "",
+      "fullFile": "cypress/integration/jsonObject.spec.js",
+      "file": "cypress/integration/jsonObject.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1eae224-0d80-4fab-a1ce-1eb4dffb5d37",
+          "title": "JSON objects",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "JSON objects",
+              "fullTitle": "JSON objects JSON objects",
+              "timedOut": null,
+              "duration": 36,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var simpeObject = {\n  \"key\": \"value\",\n  \"key2\": \"value2\"\n};\nvar simpleArrayOfValues = [\"one\", \"two\", \"three\"];\nvar arrayOfObjects = [{\n  \"key\": \"value\"\n}, {\n  \"key2\": \"value2\"\n}, {\n  \"key3\": \"value3\"\n}];\nvar mix = {\n  \"FirstName\": \"Artem\",\n  \"LastName\": \"Bondar\",\n  \"Age\": 35,\n  \"Students\": [{\n    \"firstName\": \"Sara\",\n    \"lastName\": \"Conor\"\n  }, {\n    \"firstName\": \"Bruce\",\n    \"lastName\": \"Willis\"\n  }]\n};\nconsole.log(simpeObject.key2);\nconsole.log(simpeObject[\"key2\"]);\nconsole.log(simpleArrayOfValues[1]);\nconsole.log(arrayOfObjects[2].key3);\nconsole.log(mix.Students[1].firstName);",
+              "err": {},
+              "uuid": "e1cc8b50-6f0c-458f-b98d-d12c591d3b7c",
+              "parentUUID": "a1eae224-0d80-4fab-a1ce-1eb4dffb5d37",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e1cc8b50-6f0c-458f-b98d-d12c591d3b7c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dfdaa0f9-5374-4ff1-8c8e-ded136d8e0b1",
+      "title": "",
+      "fullFile": "cypress/integration/testBack.spec.js",
+      "file": "cypress/integration/testBack.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "908d1e32-f87f-4bf7-a0de-5003d66b9cf7",
+          "title": "Test with Backend",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET from Marvel API comics",
+              "fullTitle": "Test with Backend GET from Marvel API comics",
+              "timedOut": null,
+              "duration": 1345,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.request('GET', 'http://gateway.marvel.com/v1/public/comics?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e')\n// .its('body').then(body => {\n//     const code = body.code\n//     console.log(code)\n// })\ncy.request({\n  url: 'http://gateway.marvel.com/v1/public/comics?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e',\n  method: 'GET'\n}).then(function (response) {\n  expect(response.status).to.eql(200);\n});\nvar id = 82967;\ncy.request({\n  url: 'http://gateway.marvel.com/v1/public/comics/' + id + '?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e',\n  method: 'GET'\n}).its('body').then(function (body) {\n  expect(body.data.results[0].title).to.contain('Marvel Previews (2017)');\n  console.log(body);\n});",
+              "err": {},
+              "uuid": "9f398674-8f19-4e33-80c7-014fda8e911e",
+              "parentUUID": "908d1e32-f87f-4bf7-a0de-5003d66b9cf7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f398674-8f19-4e33-80c7-014fda8e911e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1345,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e879a8bb-9b61-466f-9109-e3b3f97247cd",
+      "title": "",
+      "fullFile": "cypress/integration/testusingPOM.js",
+      "file": "cypress/integration/testusingPOM.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e34983a-e7df-4d03-aeb0-618ebfc49e25",
+          "title": "Test with Page Object Model",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to linkedin",
+              "fullTitle": "Test with Page Object Model Login to linkedin",
+              "timedOut": null,
+              "duration": 9655,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginLinkedinPage[\"default\"].loginForm(Cypress.env('username'), Cypress.env('password'));",
+              "err": {},
+              "uuid": "9e30110a-6daa-45d6-88be-1e5281ccfb68",
+              "parentUUID": "5e34983a-e7df-4d03-aeb0-618ebfc49e25",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9e30110a-6daa-45d6-88be-1e5281ccfb68"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9655,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7ce8d462-3c79-47f2-80ee-e3b0d8463a7b",
+      "title": "",
+      "fullFile": "cypress/integration/firstTest.spec.js",
+      "file": "cypress/integration/firstTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe0e466e-75c4-48db-8c9a-a630a879efa3",
+          "title": "Our first Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "first test",
+              "fullTitle": "Our first Suite first test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "ca29bb37-25fb-4362-80c3-d58a0c09d0f3",
+              "parentUUID": "fe0e466e-75c4-48db-8c9a-a630a879efa3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "second test",
+              "fullTitle": "Our first Suite second test",
+              "timedOut": null,
+              "duration": 6752,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/'); //cy.get('.nav > .nav__button-secondary')\ncy.contains('Sign in').should('exist').click();\nvar user = process.env.username;\ncy.get('#username').type(\"test\");\ncy.get('#password').type(\"test\");\ncy.get('.btn__primary--large').should('contain', 'Sign in').click().should('not.exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.\n    at Context.eval (https://www.linkedin.com/__cypress/tests?p=cypress/integration/firstTest.spec.js:22:73)",
+                "diff": null
+              },
+              "uuid": "68132665-4727-45e2-9944-095769b43929",
+              "parentUUID": "fe0e466e-75c4-48db-8c9a-a630a879efa3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "68132665-4727-45e2-9944-095769b43929"
+          ],
+          "pending": [
+            "ca29bb37-25fb-4362-80c3-d58a0c09d0f3"
+          ],
+          "skipped": [],
+          "duration": 6752,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c84166c0-2bf2-464c-ae9c-c8c7d2dd9369",
+      "title": "",
+      "fullFile": "cypress/integration/jsonObject.spec.js",
+      "file": "cypress/integration/jsonObject.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5285abc2-e407-406d-9a8a-ea23ea74ffb5",
+          "title": "JSON objects",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "JSON objects",
+              "fullTitle": "JSON objects JSON objects",
+              "timedOut": null,
+              "duration": 32,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var simpeObject = {\n  \"key\": \"value\",\n  \"key2\": \"value2\"\n};\nvar simpleArrayOfValues = [\"one\", \"two\", \"three\"];\nvar arrayOfObjects = [{\n  \"key\": \"value\"\n}, {\n  \"key2\": \"value2\"\n}, {\n  \"key3\": \"value3\"\n}];\nvar mix = {\n  \"FirstName\": \"Artem\",\n  \"LastName\": \"Bondar\",\n  \"Age\": 35,\n  \"Students\": [{\n    \"firstName\": \"Sara\",\n    \"lastName\": \"Conor\"\n  }, {\n    \"firstName\": \"Bruce\",\n    \"lastName\": \"Willis\"\n  }]\n};\nconsole.log(simpeObject.key2);\nconsole.log(simpeObject[\"key2\"]);\nconsole.log(simpleArrayOfValues[1]);\nconsole.log(arrayOfObjects[2].key3);\nconsole.log(mix.Students[1].firstName);",
+              "err": {},
+              "uuid": "859a35e1-a629-4b78-b426-53b3d49f004c",
+              "parentUUID": "5285abc2-e407-406d-9a8a-ea23ea74ffb5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "859a35e1-a629-4b78-b426-53b3d49f004c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b75dedd5-0b23-450f-a899-4ef005f7adac",
+      "title": "",
+      "fullFile": "cypress/integration/testBack.spec.js",
+      "file": "cypress/integration/testBack.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6ef5ffcb-3235-40bf-8cfd-332a264a57e7",
+          "title": "Test with Backend",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET from Marvel API comics",
+              "fullTitle": "Test with Backend GET from Marvel API comics",
+              "timedOut": null,
+              "duration": 1329,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.request('GET', 'http://gateway.marvel.com/v1/public/comics?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e')\n// .its('body').then(body => {\n//     const code = body.code\n//     console.log(code)\n// })\ncy.request({\n  url: 'http://gateway.marvel.com/v1/public/comics?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e',\n  method: 'GET'\n}).then(function (response) {\n  expect(response.status).to.eql(200);\n});\nvar id = 82967;\ncy.request({\n  url: 'http://gateway.marvel.com/v1/public/comics/' + id + '?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e',\n  method: 'GET'\n}).its('body').then(function (body) {\n  expect(body.data.results[0].title).to.contain('Marvel Previews (2017)');\n  console.log(body);\n});",
+              "err": {},
+              "uuid": "4ab914a0-e0bc-41bf-80e6-a392ce02234e",
+              "parentUUID": "6ef5ffcb-3235-40bf-8cfd-332a264a57e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4ab914a0-e0bc-41bf-80e6-a392ce02234e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1329,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e1b8bfdb-1ce8-4645-8afb-c74500868393",
+      "title": "",
+      "fullFile": "cypress/integration/testusingPOM.js",
+      "file": "cypress/integration/testusingPOM.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "176178e9-bd86-46de-801a-1d7ee4435553",
+          "title": "Test with Page Object Model",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to linkedin",
+              "fullTitle": "Test with Page Object Model Login to linkedin",
+              "timedOut": null,
+              "duration": 8526,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginLinkedinPage[\"default\"].loginForm(Cypress.env('username'), Cypress.env('password'));",
+              "err": {},
+              "uuid": "ce2937ef-72c5-41b7-8aed-940dd29115bb",
+              "parentUUID": "176178e9-bd86-46de-801a-1d7ee4435553",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce2937ef-72c5-41b7-8aed-940dd29115bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8526,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f3783dd6-07f0-4e54-af20-51b04ebc6177",
+      "title": "",
+      "fullFile": "cypress/integration/firstTest.spec.js",
+      "file": "cypress/integration/firstTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfbc158b-1a43-46bb-bee1-9d2a82eb37b9",
+          "title": "Our first Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "first test",
+              "fullTitle": "Our first Suite first test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "ea6e4995-783a-4617-be55-adaaabaa5428",
+              "parentUUID": "bfbc158b-1a43-46bb-bee1-9d2a82eb37b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "second test",
+              "fullTitle": "Our first Suite second test",
+              "timedOut": null,
+              "duration": 7104,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/'); //cy.get('.nav > .nav__button-secondary')\ncy.contains('Sign in').should('exist').click();\nvar user = process.env.username;\ncy.get('#username').type(\"test\");\ncy.get('#password').type(\"test\");\ncy.get('.btn__primary--large').should('contain', 'Sign in').click().should('not.exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying: Expected <button.btn__primary--large.from__button--floating> not to exist in the DOM, but it was continuously found.\n    at Context.eval (https://www.linkedin.com/__cypress/tests?p=cypress/integration/firstTest.spec.js:22:73)",
+                "diff": null
+              },
+              "uuid": "c604d6b7-1f74-48fc-b37c-37addd85f9ff",
+              "parentUUID": "bfbc158b-1a43-46bb-bee1-9d2a82eb37b9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c604d6b7-1f74-48fc-b37c-37addd85f9ff"
+          ],
+          "pending": [
+            "ea6e4995-783a-4617-be55-adaaabaa5428"
+          ],
+          "skipped": [],
+          "duration": 7104,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

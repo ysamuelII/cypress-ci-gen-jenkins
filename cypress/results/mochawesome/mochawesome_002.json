@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-07-11T17:54:11.580Z",
+    "end": "2020-07-11T17:54:12.957Z",
+    "duration": 1377,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dfdaa0f9-5374-4ff1-8c8e-ded136d8e0b1",
+      "title": "",
+      "fullFile": "cypress/integration/testBack.spec.js",
+      "file": "cypress/integration/testBack.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "908d1e32-f87f-4bf7-a0de-5003d66b9cf7",
+          "title": "Test with Backend",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET from Marvel API comics",
+              "fullTitle": "Test with Backend GET from Marvel API comics",
+              "timedOut": null,
+              "duration": 1345,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.request('GET', 'http://gateway.marvel.com/v1/public/comics?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e')\n// .its('body').then(body => {\n//     const code = body.code\n//     console.log(code)\n// })\ncy.request({\n  url: 'http://gateway.marvel.com/v1/public/comics?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e',\n  method: 'GET'\n}).then(function (response) {\n  expect(response.status).to.eql(200);\n});\nvar id = 82967;\ncy.request({\n  url: 'http://gateway.marvel.com/v1/public/comics/' + id + '?ts=2&apikey=c0b5e4d46438b0bf8c518a47d824be23&hash=df0f5f71a16a33b234f62453289d368e',\n  method: 'GET'\n}).its('body').then(function (body) {\n  expect(body.data.results[0].title).to.contain('Marvel Previews (2017)');\n  console.log(body);\n});",
+              "err": {},
+              "uuid": "9f398674-8f19-4e33-80c7-014fda8e911e",
+              "parentUUID": "908d1e32-f87f-4bf7-a0de-5003d66b9cf7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f398674-8f19-4e33-80c7-014fda8e911e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1345,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
