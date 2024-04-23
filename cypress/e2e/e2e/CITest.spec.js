@@ -1,10 +1,11 @@
 import config from './config.json'
 import SearchPage from '../../page-objects/pages/searchPage'
+import { beforeEach } from 'mocha'
 
 
 describe('Our Test Suite', () => {
 
-    before(function(){
+    beforeEach(function(){
         cy.visit(`${config.URL1}`)
     })
 
